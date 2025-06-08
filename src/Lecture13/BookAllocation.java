@@ -16,7 +16,7 @@ public class BookAllocation {
                 book[i] = sc.nextInt();
                 sum+=book[i];
             }
-            binarysearch(book,nos,sum);
+            System.out.println(binarysearch(book,nos,sum));
             t--;
         }
     }
@@ -35,12 +35,21 @@ public class BookAllocation {
         }
         return ans;
     }
-    public static boolean itIsPossible(int book[], int nos, int mid){
+    public static boolean itIsPossible(int books[], int nos, int mid){
         int s = 1;
-        int pagesRead = 0;
-//        for (int i = 0; i < book.length; i++) {
-//
-//        }
-        return false;
+        int no_of_pages_read = 0;
+        for (int i = 0; i < books.length;) {
+            if (no_of_pages_read+books[i]<=mid){
+                no_of_pages_read = no_of_pages_read+books[i];
+                i++;
+            }else {
+                s++;
+                no_of_pages_read = 0;
+            }
+            if (s>nos){
+                return false;
+            }
+        }
+        return true;
     }
 }

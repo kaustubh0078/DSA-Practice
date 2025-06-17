@@ -6,8 +6,8 @@ public class Power {
         System.out.println(ans);
     }
     public static int power(int a, int b){
-        if (b==0){
-            return 1;
+        if (b==1){
+            return a;
         }
         int t = power(a,b-1);
         return a*t;

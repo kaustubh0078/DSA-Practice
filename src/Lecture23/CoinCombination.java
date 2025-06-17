@@ -17,4 +17,16 @@ public class CoinCombination {
             rec(arr,amt-arr[i],ans+arr[i],i);
         }
     }
+//    public static void rec(int[] arr, int amount, String ans, int si){
+//        if (amount==0){
+//            System.out.println(ans);
+//            return;
+//        }
+//        if (amount<0){
+//            return;
+//        }
+//        for (int i = si; i < arr.length; i++) {
+//            rec(arr,amount-arr[i],ans+arr[i],i);
+//        }
+//    }
 }

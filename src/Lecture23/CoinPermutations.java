@@ -17,4 +17,16 @@ public class CoinPermutations {
             rec(arr,amount-arr[i],ans+arr[i]);
         }
     }
+//    public static void rec(int[] arr, int amount, String ans){
+//        if (amount==0){
+//            System.out.println(ans);
+//            return;
+//        }
+//        if (amount<0){
+//            return;
+//        }
+//        for (int i = 0; i < arr.length; i++) {
+//            rec(arr,amount-arr[i],ans+arr[i]);
+//        }
+//    }
 }

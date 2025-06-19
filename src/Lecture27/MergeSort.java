@@ -9,7 +9,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(merged));
     }
     public static int[] rec(int[] arr, int si, int ei){
-        if (si==ei){
+        if (si==ei){  // 1 element left after division
             int temp[] = new int[1];
             temp[0] = arr[si];
             return temp;

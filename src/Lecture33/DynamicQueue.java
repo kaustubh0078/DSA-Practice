@@ -7,7 +7,7 @@ public class DynamicQueue extends Queue {
         if(isFull()) {
             int newarr[] = new int[2*arr.length];
             for (int i = 0; i <this.size; i++) {
-                int idx = (front+i) % arr.length;
+                int idx = (front+i) % arr.length;  //same as display of queue
                 newarr[i] = arr[idx];
             }
             arr = newarr;

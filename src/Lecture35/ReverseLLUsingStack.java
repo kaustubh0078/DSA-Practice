@@ -17,6 +17,7 @@ public class ReverseLLUsingStack {
       }
     }
     public ListNode reverseList(ListNode head) {
+        if (head==null) return head;
         Stack<ListNode> st = new Stack<>();
         ListNode temp = head;
         while (temp!=null){

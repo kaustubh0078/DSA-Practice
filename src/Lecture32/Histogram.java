@@ -11,17 +11,17 @@ public class Histogram {
         for (int i = 0; i < arr.length; i++) {
             while (!st.isEmpty() && arr[i]<=arr[st.peek()]){
                 int h = arr[st.pop()];
-                if (st.isEmpty()){
+                if (st.isEmpty()){  // smallest element encountered
                     int w = i;
                     ans = Math.max(ans,h*w);
                 }else{
-                    int w = i - st.peek() - 1;
+                    int w = i - st.peek() - 1;  // -1 for excluding both sides
                     ans = Math.max(ans,h*w);
                 }
             }
             st.push(i);
         }
-        int i = arr.length;
+        int i = arr.length;   // for remaining elements in stack(if increasing pattern)
         while (!st.isEmpty()){
             int h = arr[st.pop()];
             if (st.isEmpty()){

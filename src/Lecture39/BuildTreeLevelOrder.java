@@ -27,27 +27,25 @@ public class BuildTreeLevelOrder {
     }
 
     private void createTree() {
-        // TODO Auto-generated method stub
         int n = sc.nextInt();
         Node nn = new Node();
         nn.val = n;
-        this.root = nn;
+        root = nn;
 
         Queue<Node> q = new LinkedList<>();
-        q.offer(nn);
-
-        while (!q.isEmpty()) {
+        q.offer(root);
+        while (!q.isEmpty()){
             Node temp = q.poll();
             int c1 = sc.nextInt();
             int c2 = sc.nextInt();
 
-            if (c1 != -1) {
+            if (c1!=-1){
                 Node left = new Node();
                 left.val = c1;
                 temp.left = left;
                 q.offer(left);
             }
-            if (c2 != -1) {
+            if (c2!=-1){
                 Node right = new Node();
                 right.val = c2;
                 temp.right = right;

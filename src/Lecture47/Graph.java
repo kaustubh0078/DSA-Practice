@@ -51,14 +51,14 @@ public class Graph {
         return hasPath(src, dest, new HashSet<>());
     }
     private boolean hasPath(int src, int dest, HashSet<Integer> visited){
-        if (src==dest){
+        if (src == dest){
             return true;
         }
         visited.add(src);
-        for (int nbrs : graph.get(src).keySet()){
+        for (int nbrs: graph.get(src).keySet()){
             if (!visited.contains(nbrs)){
-                boolean ans = hasPath(nbrs, dest, visited);
-                if (ans){
+                boolean ans = hasPath(nbrs,dest,visited);
+                if (ans == true){
                     return true;
                 }
             }
@@ -66,15 +66,15 @@ public class Graph {
         return false;
     }
     private void printAllPath(int src, int dest, HashSet<Integer> visited, String s){
-        if (src==dest){
-            s+= "END";
+        if (src == dest){
+            s+="End";
             System.out.println(s);
             return;
         }
         visited.add(src);
-        for (int nbrs : graph.get(src).keySet()){
+        for (int nbrs:graph.get(src).keySet()){
             if (!visited.contains(nbrs)){
-                printAllPath(nbrs,dest,visited, s+nbrs+" ==> ");
+                printAllPath(nbrs,dest,visited,s+nbrs+"==> ");
             }
         }
         visited.remove(src);

@@ -25,7 +25,7 @@ public class Graph2 {
         Queue<Integer> q = new LinkedList<>();
         HashSet<Integer> visited = new HashSet<>();
 
-        q.add(src);
+        q.add(src);   // add first node to queue
 
         while (!q.isEmpty()){
             int rv = q.poll();
@@ -34,14 +34,14 @@ public class Graph2 {
                 return true;
             }
 
-            if (visited.contains(rv)){
+            if (visited.contains(rv)){    //already visited vertex
                 continue;
             }
 
-            visited.add(rv);
+            visited.add(rv);   //vertex visited
 
             for (int nbrs: graph.get(rv).keySet()){
-                if (!visited.contains(nbrs)){
+                if (!visited.contains(nbrs)){   //if nbr not visited, only then add
                     q.add(nbrs);
                 }
             }
@@ -76,7 +76,7 @@ public class Graph2 {
         return false;
     }
 
-    public void DFT(){
+    public void DFT(){   //if graph is disconnected
         Stack<Integer> st = new Stack<>();
         HashSet<Integer> visited = new HashSet<>();
 
@@ -101,7 +101,7 @@ public class Graph2 {
             }
         }
     }
-    public void BFT(){
+    public void BFT(){   //if graph is disconnected
         Queue<Integer> q = new LinkedList<>();
         HashSet<Integer> visited = new HashSet<>();
 
@@ -152,7 +152,7 @@ public class Graph2 {
         }
         return count == 1;
     }
-    public int countComponents(){
+    public int countComponents(){   //not vertices, but independent graph sections in one graph
         Queue<Integer> q = new LinkedList<>();
         HashSet<Integer> visited = new HashSet<>();
         int count = 0;
@@ -189,7 +189,7 @@ public class Graph2 {
             q.offer(src);
             while (!q.isEmpty()){
                 int rv = q.poll();
-                if (visited.contains(rv)){
+                if (visited.contains(rv)){   //guaranteed cyclic
                     return true;
                 }
                 visited.add(rv);
@@ -217,7 +217,7 @@ public class Graph2 {
                 int rv = q.poll();
 
                 if (visited.contains(rv)){
-                    return false;
+                    return false;   // no cycle
                 }
                 visited.add(rv);
                 for (int nbr : graph.get(rv).keySet()){
@@ -227,6 +227,6 @@ public class Graph2 {
                 }
             }
         }
-        return count==1;
+        return count==1;   //is connected
     }
 }
